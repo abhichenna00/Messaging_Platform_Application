@@ -1,0 +1,52 @@
+/* src/components/MessageDisplay.css */
+
+.message-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  padding: 1rem;
+  box-sizing: border-box;
+}
+
+.message-list > p {
+  color: var(--muted-foreground, #888);
+  font-size: 0.875rem;
+  padding: 2rem;
+  margin: 0;
+}
+
+/* Individual message - Discord style */
+.message-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+/* First line: username and timestamp */
+.message-header {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+}
+
+.message-sender {
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: var(--foreground, #fff);
+}
+
+.message-timestamp {
+  font-size: 0.75rem;
+  color: var(--muted-foreground, #72767d);
+}
+
+/* Second line: message content */
+.message-content {
+  font-size: 0.9375rem;
+  line-height: 1.375;
+  color: var(--foreground, #dcddde);
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  padding-left: 0;
+}

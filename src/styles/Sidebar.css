@@ -1,0 +1,115 @@
+/* Sidebar avatar for recent conversations */
+.sidebar-avatar {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: var(--primary);
+  color: var(--primary-foreground);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 0.625rem;
+  flex-shrink: 0;
+}
+
+/* Ensure sidebar container takes full height */
+[data-slot="sidebar"] {
+  height: 100vh;
+}
+
+/* Fix sidebar menu button to center avatar */
+.sidebar-avatar-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.panel-content {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.panel-header {
+  padding: 16px;
+  border-bottom: 1px solid var(--border);
+}
+
+.panel-header h2 {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.panel-body {
+  flex: 1;
+  padding: 16px;
+  overflow-y: auto;
+}
+
+.panel-link {
+  display: block;
+  width: 100%;
+  padding: 10px 12px;
+  border: none;
+  background: transparent;
+  border-radius: 6px;
+  cursor: pointer;
+  color: var(--foreground);
+  font-size: 0.875rem;
+  text-align: left;
+  transition: background-color 0.15s;
+}
+
+.panel-link:hover {
+  background: var(--sidebar-accent);
+}
+
+/* Friends list styles */
+.friends-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.friend-item {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 12px;
+  border: none;
+  background: transparent;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.15s;
+  text-align: left;
+}
+
+.friend-item:hover {
+  background: var(--sidebar-accent);
+}
+
+.friend-avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--primary);
+  color: var(--primary-foreground);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 0.875rem;
+  flex-shrink: 0;
+}
+
+.friend-name {
+  color: var(--foreground);
+  font-size: 0.875rem;
+  font-weight: 500;
+}
