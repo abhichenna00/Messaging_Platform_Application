@@ -108,8 +108,8 @@ function Avatar({ src, fallback, size = 'md', status, showStatus = false, classN
         <span className="avatar-fallback">{fallback.charAt(0).toUpperCase()}</span>
       )}
       {showStatus && (
-        <div
-          className="status-indicator"
+        <div 
+          className="status-indicator" 
           style={{ backgroundColor: statusColor }}
         />
       )}
@@ -167,7 +167,7 @@ export default function HomePage() {
 
       // Collect all unique user IDs that need profile fetching
       const userIds = new Set<string>()
-
+      
       friendsData.forEach(f => userIds.add(f.friend_id))
       incoming.forEach(r => userIds.add(r.from_user_id))
       outgoing.forEach(r => userIds.add(r.to_user_id))
@@ -212,8 +212,8 @@ export default function HomePage() {
       // Merge profile data into conversations
       const conversationsWithProfiles = conversations.map(c => ({
         ...c,
-        other_user_avatar_url: c.other_user_id
-          ? profilesMap.get(c.other_user_id)?.avatar_url || null
+        other_user_avatar_url: c.other_user_id 
+          ? profilesMap.get(c.other_user_id)?.avatar_url || null 
           : null,
         other_user_status: c.other_user_id
           ? profilesMap.get(c.other_user_id)?.status || null
@@ -238,7 +238,7 @@ export default function HomePage() {
 
     // Filter by tab - now using actual status
     if (friendsTab === 'online') {
-      filtered = filtered.filter((friend) =>
+      filtered = filtered.filter((friend) => 
         friend.status === 'online' || friend.status === 'idle' || friend.status === 'dnd'
       )
     }
@@ -258,7 +258,7 @@ export default function HomePage() {
 
   // Count online friends (online, idle, or dnd - not offline/invisible)
   const onlineFriendsCount = useMemo(() => {
-    return friends.filter((friend) =>
+    return friends.filter((friend) => 
       friend.status === 'online' || friend.status === 'idle' || friend.status === 'dnd'
     ).length
   }, [friends])
@@ -377,6 +377,10 @@ export default function HomePage() {
 
   return (
     <div className="home-page">
+      <div className="home-header">
+        <h1>Welcome{username ? `, ${username}` : ''}!</h1>
+      </div>
+
       <div className="home-layout">
         {/* Recent Chats Panel */}
         <div className="recent-chats-panel">
@@ -463,7 +467,7 @@ export default function HomePage() {
                     Enter the username of the person you want to add as a friend.
                   </DialogDescription>
                 </DialogHeader>
-
+                
                 <div className="add-friend-dialog-content">
                   {addFriendError && (
                     <p className="add-friend-dialog-error">{addFriendError}</p>
@@ -656,8 +660,8 @@ export default function HomePage() {
                     ))
                   ) : (
                     <p className="home-empty">
-                      {friendsTab === 'online'
-                        ? 'No friends online.'
+                      {friendsTab === 'online' 
+                        ? 'No friends online.' 
                         : 'No friends match your search.'}
                     </p>
                   )}
